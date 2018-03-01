@@ -3,10 +3,13 @@
 
 #include <iostream>
 
+
+
 class Singleton {
 	public:
 		static Singleton& Instance() {
 			// 定义一个local static 变量
+			// C++0x之后是该实现线程安全的, 编译器保证内部变量的线程安全,G++4.0及以上是支持的
 			static Singleton instance_;
 			return instance_;
 		}
